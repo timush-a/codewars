@@ -3,11 +3,4 @@ Write an algorithm that takes an array and moves all of the zeros to the end, pr
 """
 
 def move_zeros(array):
-    arr = []
-    zeros = []
-    for a in array:
-        if isinstance(a, int) and a == 0:
-            zeros.append(a)
-        else:
-            arr.append(a)
-    return arr + zeros
+    return sorted(array, key=lambda x: x==0 and type(x) is not bool)
