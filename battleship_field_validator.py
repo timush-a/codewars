@@ -18,7 +18,7 @@ def validate_battlefield(field):
                 ones += 1
     if ones != 20:
         valid = False
-        
+
     for row in range(1, len(field) - 1):
         for column in range(1, len(field) - 1):
             if field[row][column] == 1 == field[row+1][column+1]:
@@ -29,16 +29,13 @@ def validate_battlefield(field):
                 valid = False
             elif field[row][column] == 1 == field[row-1][column+1]:
                 valid = False
-    
-    
-    
-    
+
     def count_battleships(field):
         nonlocal valid
         battleships = 0
         cruisers = 0
         destroyers = 0
-        
+
         for row in zip(*field):
             string = ""
             for elem in row:
@@ -53,7 +50,7 @@ def validate_battlefield(field):
                 elif len(ship) > 4:
                     valid = False
                     return valid
-                    
+
         for row in field:
             string = ""
             for elem in row:
@@ -68,14 +65,12 @@ def validate_battlefield(field):
                 elif len(ship) > 4:
                     valid = False
                     return valid
-        
+
         if battleships != 1 or cruisers != 2 or destroyers != 3:
             valid = False
             return valid
-            
+
     count_battleships(field)
-    
-    
-    
-    
+
     return valid
+
