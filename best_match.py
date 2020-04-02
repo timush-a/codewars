@@ -11,7 +11,8 @@ The goal difference of all matches are 1, but at 4th match "Zamalek" scored more
 The number of goals "Zamalek" scored in each match. It is guaranteed that zamalekGoals[i] < ALAHLYGoals[i] for each element.
 Index of the best match.
 """
-# 1 variant
+
+
 def best_match(goals1, goals2):
 
     all_matches = list(zip(goals1, goals2))
@@ -25,8 +26,10 @@ def best_match(goals1, goals2):
         if goals[0] - goals[1] == score[0] - score[1] and score[1] < goals[1]:
             score = goals
     return all_matches.index(score)
-    
+
+
 # 2 variant
 def best_match(goals1, goals2):
     l = [(i - j, -j) for i, j in zip(goals1, goals2)]
     return l.index(min(l))
+
