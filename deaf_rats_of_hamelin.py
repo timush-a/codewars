@@ -1,12 +1,9 @@
 """
 Story
 The Pied Piper has been enlisted to play his magical tune and coax all the rats out of town.
-
 But some of the rats are deaf and are going the wrong way!
-
 Kata Task
 How many deaf rats are there?
-
 Legend
 P = The Pied Piper
 O~ = Rat going left
@@ -17,9 +14,6 @@ ex2 P O~ O~ ~O O~ has 1 deaf rat
 ex3 ~O~O~O~OP~O~OO~ has 2 deaf rats
 """
 
-
-
 def count_deaf_rats(town):
     town = town.replace(" ","")[::2]
-    print(town)
     return town.count('O')
